@@ -25,7 +25,7 @@ public class CommandServer extends Command implements TabExecutor
 
     public CommandServer()
     {
-        super( "server", "bungeecord.command.server" );
+        super( "server", "bungeecord.command.server", "servers" );
     }
 
     @Override
@@ -41,7 +41,7 @@ public class CommandServer extends Command implements TabExecutor
         {
             player.sendMessage( ProxyServer.getInstance().getTranslation( "current_server", player.getServer().getInfo().getName() ) );
             TextComponent serverList = new TextComponent( ProxyServer.getInstance().getTranslation( "server_list" ) );
-            serverList.setColor( ChatColor.GOLD );
+            serverList.setColor( ChatColor.RED );
             boolean first = true;
             for ( ServerInfo server : servers.values() )
             {
